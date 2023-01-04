@@ -16,9 +16,21 @@ public class Trabajadores {
     private int sueldoBase;
     private int cantidadHijos;
 
+    /**
+     *
+     */
     public Trabajadores() {
     }
 
+    /**
+     *
+     * @param rut
+     * @param nombre
+     * @param sexo
+     * @param edad
+     * @param sueldoBase
+     * @param cantidadHijos
+     */
     public Trabajadores(String rut, String nombre, char sexo, int edad, int sueldoBase, int cantidadHijos) {
         setCantidadHijos(cantidadHijos);
         setEdad(edad);
@@ -28,10 +40,18 @@ public class Trabajadores {
         setSueldoBase(sueldoBase);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getRut() {
         return rut;
     }
 
+    /**
+     *
+     * @param rut
+     */
     public void setRut(String rut) {
         // Validamos que el rut no este vacio
         if (rut.isEmpty()) {
@@ -42,10 +62,18 @@ public class Trabajadores {
         this.rut = rut;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         // Validamos que tenga al menos 5 caracteres
         if (nombre.length() < 5) {
@@ -56,10 +84,18 @@ public class Trabajadores {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public char getSexo() {
         return sexo;
     }
 
+    /**
+     *
+     * @param sexo
+     */
     public void setSexo(char sexo) {
         // Validamos que M = Masculino y F = Femenino
         if (sexo != 'M' && sexo != 'F') {
@@ -70,10 +106,18 @@ public class Trabajadores {
         this.sexo = sexo;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getEdad() {
         return edad;
     }
 
+    /**
+     *
+     * @param edad
+     */
     public void setEdad(int edad) {
 
         // Validamos que la edad sea mayor a 18
@@ -85,10 +129,18 @@ public class Trabajadores {
         this.edad = edad;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSueldoBase() {
         return sueldoBase;
     }
 
+    /**
+     *
+     * @param sueldoBase
+     */
     public void setSueldoBase(int sueldoBase) {
 
         // Validamos que el sueldo base sea mayor a 300.000
@@ -100,10 +152,18 @@ public class Trabajadores {
         this.sueldoBase = sueldoBase;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCantidadHijos() {
         return cantidadHijos;
     }
 
+    /**
+     *
+     * @param cantidadHijos
+     */
     public void setCantidadHijos(int cantidadHijos) {
         // Validamos que sea un numero positivo
         if (cantidadHijos < 0) {
@@ -114,6 +174,10 @@ public class Trabajadores {
         this.cantidadHijos = cantidadHijos;
     }
 
+    /**
+     * Calacula el incentivo dependiendo del sexo edad y cantidad de hijos
+     * @return
+     */
     public int calcularIncentivo(){
         int edad = getEdad();
         char sexo = getSexo();
@@ -140,7 +204,9 @@ public class Trabajadores {
 
     }
 
-
+    /**
+     * Muestra con un mensaje - nombre,suledo y incentivo
+     */
     public void mostrarIncentivo(){
         int incentivo = calcularIncentivo();
         String nombre = getNombre();
